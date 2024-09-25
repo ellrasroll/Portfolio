@@ -301,6 +301,10 @@ section {
     text-align: center;
 }
 
+.text-container {
+    display: flex;
+    text-align: center;
+}
 .section-container {
     gap: 64px;
     height: 80%;
@@ -324,6 +328,10 @@ section {
     font-size: 28px;
     margin-bottom: 32px;
 }
+.experience-description {
+    padding: 0 0 30px;
+    font-weight: 500;
+}
 
 .experience-details-container {
     display: flex;
@@ -338,12 +346,20 @@ section {
     flex-direction: row;
     gap: 40px;
     justify-content: space-around;
+    align-items: center;
+}
+
+.article-container-wrapper {
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-around;
 }
 
 article {
-    display: flex;
-    width: 160px;
-    justify-content: space-around;
+    display: flex;    justify-content: space-around;
     gap: 8px;
 }
 
@@ -371,6 +387,12 @@ article .icon {
 .project-title {
     margin: 16px;
     color: black;
+}
+
+.project-description {
+    padding: 0 0 10px;
+    font-weight: 500;
+    font-size: 15px;
 }
 
 .project-btn {

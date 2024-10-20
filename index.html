@@ -6,6 +6,10 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
 </head>
 <body>
 
@@ -251,65 +255,66 @@
     <section id="projects">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img src="./assets/youtubeclone-img.png"
-                    alt="Project 1"
-                    class="project-img"
-                    />
+    
+        <!-- Swiper Container -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Project 1 -->
+                <div class="swiper-slide">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/youtubeclone-img.png" alt="Project 1" class="project-img" />
+                        </div>
+                        <h2 class="experience-sub-title project-title">Ytube Clone</h2>
+                        <p class="experience-sub-title project-description">
+                            A YouTube Clone built with React, Redux Toolkit, TypeScript, and Tailwind CSS, utilizing YouTube Data API v3 to fetch and display video content. Features include video search, browsing, and a responsive design.
+                        </p>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ellrasroll/YoutubeClone'">
+                                Github
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="experience-sub-title project-title">Ytube Clone</h2>
-                <p class="experience-sub-title project-description">A YouTube Clone built with React, Redux Toolkit, TypeScript, and Tailwind CSS, utilizing YouTube Data API v3 to fetch and display video content. Features include video search, browsing, and a responsive design.</p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/ellrasroll/YoutubeClone'"
-                        >
-                    Github
-                    </button>
+    
+                <!-- Project 2 -->
+                <div class="swiper-slide">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/ourworld-img.png" alt="Project 2" class="project-img" />
+                        </div>
+                        <h2 class="experience-sub-title project-title">OurWorld</h2>
+                        <p class="experience-sub-title project-description">
+                            A responsive website built with HTML, CSS, and JavaScript featuring login and registration functionality. Includes a secure login page with form validation, password protection, and user authentication for a smooth user experience.
+                        </p>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ellrasroll/OurWorld'">
+                                Github
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 3 -->
+                <div class="swiper-slide">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
+                        </div>
+                        <h2 class="experience-sub-title project-title">Project 3</h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+                                Github
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <div class="article-container-wrapper">
-                    <img src="./assets/ourworld-img.png"
-                    alt="Project 2"
-                    class="project-img"
-                    />
-                </div>
-                </div>
-                <h2 class="experience-sub-title project-title">OurWorld</h2>
-                <p class="experience-sub-title project-description">A responsive website built with HTML, CSS, and JavaScript featuring login and registration functionality. Includes a secure login page with form validation, password protection, and user authentication for a smooth user experience.</p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/ellrasroll/OurWorld'"
-                        >
-                    Github
-                    </button>
-                </div>
-            </div> <div class="details-container color-container">
-                <div class="article-container">
-                    <img src="./assets/project-3.png"
-                    alt="Project 3"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Project 3</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/'"
-                        >
-                    Github
-                    </button>
-                </div>
-            </div>
+            <!-- Add Pagination if needed -->
+            <div class="swiper-pagination"></div>
         </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#projects'"
-        />
     </section>
+    
     <section id="contact">
         <p class="section__text__p1">Get In Touch</p>
         <h1 class="title">Contact Me</h1>
@@ -363,16 +368,16 @@
         uniform float u_ratio;
         uniform vec2 u_pointer_position;
         uniform float u_scroll_progress;
-
+        
         vec2 rotate(vec2 uv, float th) {
             return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
         }
-
+        
         float neuro_shape(vec2 uv, float t, float p) {
             vec2 sine_acc = vec2(0.);
             vec2 res = vec2(0.);
             float scale = 8.;
-
+        
             for (int j = 0; j < 15; j++) {
                 uv = rotate(uv, 1.);
                 sine_acc = rotate(sine_acc, 1.);
@@ -383,31 +388,38 @@
             }
             return res.x + res.y;
         }
-
+        
         void main() {
             vec2 uv = .5 * vUv;
             uv.x *= u_ratio;
-
+        
             vec2 pointer = vUv - u_pointer_position;
             pointer.x *= u_ratio;
             float p = clamp(length(pointer), 0., 1.);
             p = .5 * pow(1. - p, 2.);
-
+        
             float t = .001 * u_time;
-            vec3 color = vec3(0.);
-
             float noise = neuro_shape(uv, t, p);
-
+        
             noise = 1.2 * pow(noise, 3.);
             noise += pow(noise, 10.);
             noise = max(.0, noise - .5);
             noise *= (1. - length(vUv - .5));
-
-            color = normalize(vec3(.2, .5 + .4 * cos(3. * u_scroll_progress), .5 + .5 * sin(3. * u_scroll_progress)));
-            color = color * noise;
-
-            gl_FragColor = vec4(color, noise);
+        
+            // If the noise is small, we set the color to white (background)
+            if (noise < 0.01) {
+                gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);  // Pure white background
+            } else {
+                // Black and gray swirls
+                float grayShade = mix(0.0, 0.2, noise);  // Adjust black and gray intensity
+                gl_FragColor = vec4(vec3(grayShade), 1.0);  // Swirls in gray/black
+            }
         }
+        
+        
+        
+        
+        
     </script>
     <script src="script.js"></script>
 

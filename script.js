@@ -121,3 +121,40 @@ window.onload = function() {
         return uniforms;
     }
 };
+
+var swiper = new Swiper(".swiper", {
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 10,
+    speed: 1000,
+    freeMode: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true, 
+    },
+    initialSlide: 1,
+    breakpoints: {
+        
+        0: {
+          slidesPerView: 1,     
+          spaceBetween: 10,
+        },
+        
+        768: {
+          slidesPerView: 2,    
+          spaceBetween: 20,
+        },
+        
+        1024: {
+          slidesPerView: 3, 
+          spaceBetween: 30,
+        },
+      },
+    on: {
+      click(event) {
+        swiper.slideTo(this.clickedIndex);
+      },
+    },
+  });
+  

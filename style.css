@@ -316,7 +316,11 @@ section {
 }
 
 .text-container {
-    display: flex;
+    padding: 24px;
+    background: white;
+    border-radius: 32px;
+    border: rgb(53,53,53) 0.1rem solid;
+    border-color: rgb(163,163,163);
     text-align: center;
 }
 .section-container {
@@ -413,6 +417,52 @@ article .icon {
     color: black;
     border-color: rgb(163,163,163);
 }
+
+/* Swiper container */
+.swiper {
+    width: 100%;
+    padding: 50px 0;
+  }
+  
+  /* Swiper slide */
+  .swiper-slide {
+    position: relative;
+    width: 250px; /* Adjust width as necessary */
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 1s;
+    user-select: none;
+  }
+  
+  /* Swiper active slide (for zoom effect or other styles) */
+  .swiper-slide-active {
+    width: 350px; /* Active slide width */
+    transition: 1s;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 1s;
+  }
+  
+  /* Swiper pagination bullets */
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .swiper-pagination-bullet-active {
+    width: 32px;
+    background-color: #6f1223;
+    border-radius: 14px;
+  }
+  
 
 /* Contact Page */
 

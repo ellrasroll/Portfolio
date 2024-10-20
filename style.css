@@ -147,7 +147,7 @@ a:hover {
 section {
     padding-top: 4vh;
     height: 96vh;
-    margin: 0 160px;
+    margin: 0 50px;
     box-sizing: border-box;
     min-height: fit-content;
 }
@@ -287,7 +287,7 @@ section {
 
 .arrow {
     position: absolute;
-    right: -80px;
+    right: 0;
     bottom: 40px;
 }
 

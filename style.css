@@ -25,6 +25,19 @@ a, .btn {
     transition: all 300ms ease;
 }
 
+/* Canvas Background */
+
+canvas#neuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps the canvas behind everything */
+    pointer-events: none; /* Ensures it doesn't capture any mouse events */
+    opacity: 0.95;
+}
+
 /* Desktop Nav */
 
 nav, .nav-links {
